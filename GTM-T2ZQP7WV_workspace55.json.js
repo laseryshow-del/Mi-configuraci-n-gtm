@@ -272,7 +272,7 @@
                 ],
                 "fingerprint": "1770465527070",
                 "firingTriggerId": [
-                    "73"
+                    "77"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -310,9 +310,9 @@
                         "value": "true"
                     },
                     {
-                        "type": "TEMPLATE",
+                        "type": "BOOLEAN",
                         "key": "overrideCookieDomain",
-                        "value": "{{Página general}}"
+                        "value": "true"
                     },
                     {
                         "type": "LIST",
@@ -453,7 +453,7 @@
                     {
                         "type": "BOOLEAN",
                         "key": "useHttpOnlyCookie",
-                        "value": "false"
+                        "value": "true"
                     },
                     {
                         "type": "TEMPLATE",
@@ -462,7 +462,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "overridenCookieDomain",
-                        "value": "{{Página general}}"
+                        "value": "laserman.com.ar"
                     },
                     {
                         "type": "BOOLEAN",
@@ -754,7 +754,7 @@
                 ],
                 "fingerprint": "1770468450292",
                 "firingTriggerId": [
-                    "69"
+                    "75"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -995,7 +995,7 @@
                 ],
                 "fingerprint": "1770465336932",
                 "firingTriggerId": [
-                    "57"
+                    "82"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -1236,37 +1236,8 @@
                 ],
                 "fingerprint": "1770465792126",
                 "firingTriggerId": [
-                    "57"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6336855581",
-                "containerId": "242224097",
-                "tagId": "85",
-                "name": "FB_CONVERSIONS_API-25699472449663830-Server-Tag",
-                "type": "cvt_NCN6S",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "pixelId",
-                        "value": "25699472449663830"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "apiAccessToken",
-                        "value": "EAA0D5fYG7HQBQqSIqvqNyLnCqD5QIdLuskpZCAW3jcj7jTciVNh4Ds0Dmeeod0dQl3rCRM778YHBUppYrjlDEmpRGu3YMcNHfRehOknCvrh0Y1AauSi06uH9HQE94gmSJJZAauGuM0xSWVeoZCNxQJPDjoqR9oqkQLR6jF1HsRrLZCSrtkLdQ6KV6NEnOt2j9QZDZD"
-                    }
-                ],
-                "fingerprint": "1770473348355",
-                "firingTriggerId": [
-                    "84"
+                    "57",
+                    "78"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -1371,7 +1342,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "view_content"
+                                "value": "contact"
                             }
                         ]
                     }
@@ -1527,31 +1498,6 @@
                     }
                 ],
                 "fingerprint": "1770467751898"
-            },
-            {
-                "accountId": "6336855581",
-                "containerId": "242224097",
-                "triggerId": "84",
-                "name": "FB_CONVERSIONS_API-25699472449663830-Server-Trigger",
-                "type": "ALWAYS",
-                "filter": [
-                    {
-                        "type": "MATCH_REGEX",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Event Name}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": ".+"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1770473343380"
             }
         ],
         "variable": [
@@ -1744,7 +1690,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "value",
-                        "value": "caiate.laserman.com.ar"
+                        "value": "marremix.laserman.com.ar"
                     }
                 ],
                 "fingerprint": "1770259320784",
