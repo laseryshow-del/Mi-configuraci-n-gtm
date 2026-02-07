@@ -16,13 +16,18 @@ El sistema actual ya tiene:
 
 **Lo que vamos a agregar:**
 
-| # | Evento Meta | Acción | Valor | Prioridad |
-|---|------------|--------|-------|-----------|
-| 1 | ViewContent | Visita Home | $300 ARS | ⭐ Base |
-| 2 | ViewContent | Sección Show | $500 ARS | ⭐⭐ Media |
-| 3 | Contact | Clic WhatsApp | $1,000 ARS | ⭐⭐⭐⭐ MÁXIMA |
-| 4 | Lead | Vista /dk/ | $1,200 ARS | ⭐⭐⭐ Alta |
-| 5 | Purchase | Vista /presupuesto2026.html | $2,000 ARS | ⭐⭐⭐ Alta |
+| # | Evento Meta | Acción | Valor | Prioridad | Origen del tráfico |
+|---|------------|--------|-------|-----------|-------------------|
+| 1 | ViewContent | Visita landing page | $300 ARS | ⭐ Base | Público general (ads/orgánico) |
+| 2 | Contact | Clic WhatsApp | $1,000 ARS | ⭐⭐⭐⭐ MÁXIMA | Desde la landing page |
+| 3 | Lead | Vista /dk/ | $1,200 ARS | ⭐⭐⭐ Alta | Enviada personalmente a directores de cultura |
+| 4 | Purchase | Vista /presupuesto2026.html | $2,000 ARS | ⭐⭐⭐ Alta | Enviada a prospectos que piden precio |
+
+**NOTA SOBRE EL FUNNEL:**
+- La landing page (laserman.com.ar) es una página única sin secciones separadas
+- Las páginas /dk/ y /presupuesto2026.html NO están linkeadas desde la web — Germán las envía personalmente por WhatsApp a prospectos avanzados
+- /dk/ = Directores de cultura contactados personalmente (oportunidad de venta calificada)
+- /presupuesto2026 = Prospectos que pidieron presupuesto (máximo interés de compra)
 
 ---
 
@@ -88,11 +93,15 @@ Estos son los datos **EXACTOS** de la configuración actual. **Usá estos valore
 
 ### CONTEXTO DEL NEGOCIO:
 - Germán tiene una empresa de shows de láser en Argentina
+- El sitio laserman.com.ar es una landing page única (no tiene secciones ni páginas internas)
 - El objetivo es trackear leads y contactos de WhatsApp
 - Ya tiene Stape configurado con dominio personalizado (caiate.laserman.com.ar)
 - Ya resolvió problemas previos de deduplicación
 - Quiere EMQ alto (>7) para mejor atribución
-- Contact (WhatsApp) es su CONVERSIÓN PRINCIPAL
+- Contact (WhatsApp) es su CONVERSIÓN PRINCIPAL desde la landing
+- /dk/ y /presupuesto2026 son páginas que Germán envía PERSONALMENTE por WhatsApp a prospectos (no están linkeadas desde la web)
+- /dk/ → Directores de cultura contactados directamente (oportunidad de venta calificada)
+- /presupuesto2026 → Prospectos avanzados que pidieron presupuesto (máximo interés)
 
 ---
 
@@ -173,7 +182,7 @@ Cuando Germán inicie la conversación, decí:
 
 > "¡Hola Germán! Soy tu asistente para agregar los nuevos eventos de tracking a laserman.com.ar.
 >
-> Tu sistema actual ya tiene PageView y Lead funcionando con deduplicación. Vamos a agregar 5 eventos nuevos: ViewContent Home, ViewContent Show, Contact WhatsApp, Lead DK, y Purchase Presupuesto.
+> Tu sistema actual ya tiene PageView y Lead funcionando con deduplicación. Vamos a agregar 4 eventos nuevos: ViewContent Home, Contact WhatsApp, Lead DK, y Purchase Presupuesto.
 >
 > Hay 4 módulos:
 > 1. GTM Web — Crear triggers y tags del Pixel
@@ -237,57 +246,7 @@ Cuando Germán inicie la conversación, decí:
 
 ---
 
-### Paso 1.2 — Crear Trigger: PV - Show Section
-
-> "Creá otro activador nuevo. Nombre: PV - Show Section.
-> P-V, espacio, guión medio, espacio, Show, espacio, Section. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "Tipo: 'Vista de página'. Elegí 'Algunas vistas de página'. En la condición:
-> - Primer campo: 'Page Path'
-> - Operador: 'contiene'
-> - Valor: show
->
-> Esto va a disparar cuando la URL contenga la palabra 'show'. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "IMPORTANTE: ¿Tu sección de show está en una página separada tipo laserman.com.ar/show? ¿O es una sección dentro de la página principal?"
-
-**Esperar respuesta**
-
-**Si es sección dentro de la home (scroll):**
-> "Ah, entonces necesitamos cambiar el enfoque. En vez de Page View, vamos a usar un trigger de 'Visibilidad de elementos' o 'Element Visibility'.
->
-> Borrá este activador y creá uno nuevo.
-> Nombre: EV - Show Section (E-V, espacio, guión medio, espacio, Show, espacio, Section).
-> Tipo: Buscá 'Visibilidad del elemento' o 'Element Visibility'. ¿Lo encontraste?"
-
-**Esperar respuesta**
-
-> "En la configuración:
-> - Método de selección: 'Selector CSS'
-> - Selector: necesito que me digas el ID o clase del div de la sección del show en tu página. Podés abrir tu web, hacer clic derecho en la sección del show, 'Inspeccionar', y decirme qué ID o clase tiene el contenedor."
-
-**Esperar respuesta y adaptar según lo que diga**
-
-> "Configurá:
-> - Activar este activador: 'Una vez por página'
-> - Porcentaje visible mínimo: 50
->
-> Guardá. ¿Guardó?"
-
-**Esperar respuesta**
-
-**Si es página separada (/show o similar):**
-> "Perfecto. Dejamos la condición como está. Guardá. ¿Guardó?"
-
-**Esperar respuesta**
-
----
-
-### Paso 1.3 — Crear Trigger: Click - WhatsApp
+### Paso 1.2 — Crear Trigger: Click - WhatsApp
 
 > "Creá otro activador nuevo. Nombre: Click - WhatsApp.
 > Click, espacio, guión medio, espacio, WhatsApp. ¿Quedó?"
@@ -344,7 +303,7 @@ Cuando Germán inicie la conversación, decí:
 
 ---
 
-### Paso 1.4 — Crear Trigger: PV - DK
+### Paso 1.3 — Crear Trigger: PV - DK
 
 > "Creá otro activador nuevo. Nombre: PV - DK.
 > P-V, espacio, guión medio, espacio, D-K (de-ka). ¿Quedó?"
@@ -366,7 +325,7 @@ Cuando Germán inicie la conversación, decí:
 
 ---
 
-### Paso 1.5 — Crear Trigger: PV - Presupuesto
+### Paso 1.4 — Crear Trigger: PV - Presupuesto
 
 > "Último trigger. Creá uno nuevo. Nombre: PV - Presupuesto.
 > P-V, espacio, guión medio, espacio, Presupuesto. ¿Quedó?"
@@ -386,11 +345,11 @@ Cuando Germán inicie la conversación, decí:
 
 **Esperar respuesta**
 
-> "✅ ¡Excelente! Los 5 triggers están creados. Ahora vamos a crear los tags del Pixel."
+> "✅ ¡Excelente! Los 4 triggers están creados. Ahora vamos a crear los tags del Pixel."
 
 ---
 
-### Paso 1.6 — Crear Tag: Meta Pixel - ViewContent Home
+### Paso 1.5 — Crear Tag: Meta Pixel - ViewContent Home
 
 > "Andá a 'Etiquetas' o 'Tags' en el menú izquierdo. Hacé clic en 'Nueva'. ¿Se abrió?"
 
@@ -487,47 +446,7 @@ fbq('track', 'ViewContent', {
 
 ---
 
-### Paso 1.7 — Crear Tag: Meta Pixel - ViewContent Show
-
-> "Creá otra etiqueta nueva. Nombre: Meta Pixel - ViewContent Show. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "HTML personalizado. El código es casi igual al anterior pero con estos cambios:
-> - content_name: 'Seccion_Show' (en vez de Home_General)
-> - value: 500 (en vez de 300)
->
-> ¿Podés recibirlo por chat?"
-
-**Enviar:**
-```html
-<script>
-fbq('track', 'ViewContent', {
-  content_name: 'Seccion_Show',
-  content_category: 'seccion',
-  content_type: 'page',
-  content_ids: ['show'],
-  currency: 'ARS',
-  value: 500
-}, {eventID: '{{DL - Event ID}}'});
-</script>
-```
-
-> "Configuración avanzada → Secuenciación → 'Meta Pixel - Base' antes. ¿Hecho?"
-
-**Esperar respuesta**
-
-> "Activación: el trigger que le corresponde. Si es página separada, elegí 'PV - Show Section'. Si es visibilidad de elemento, elegí 'EV - Show Section'. ¿Cuál de los dos creamos antes?"
-
-**Esperar respuesta y confirmar que eligió el correcto**
-
-> "Guardá. ¿Guardó?"
-
-**Esperar respuesta**
-
----
-
-### Paso 1.8 — Crear Tag: Meta Pixel - Contact WhatsApp
+### Paso 1.6 — Crear Tag: Meta Pixel - Contact WhatsApp
 
 > "Creá otra etiqueta nueva. Nombre: Meta Pixel - Contact WhatsApp. ¿Quedó?"
 
@@ -557,7 +476,7 @@ fbq('track', 'Contact', {
 
 ---
 
-### Paso 1.9 — Crear Tag: Meta Pixel - Lead DK
+### Paso 1.7 — Crear Tag: Meta Pixel - Lead DK
 
 > "Creá otra etiqueta nueva. Nombre: Meta Pixel - Lead DK. ¿Quedó?"
 
@@ -589,7 +508,7 @@ fbq('track', 'Lead', {
 
 ---
 
-### Paso 1.10 — Crear Tag: Meta Pixel - Purchase Presupuesto
+### Paso 1.8 — Crear Tag: Meta Pixel - Purchase Presupuesto
 
 > "Último tag de Pixel. Creá etiqueta nueva. Nombre: Meta Pixel - Purchase Presupuesto. ¿Quedó?"
 
@@ -617,7 +536,7 @@ fbq('track', 'Purchase', {
 
 **Esperar respuesta**
 
-> "✅ ¡Todos los tags de Meta Pixel están creados! Ahora necesitamos crear los tags GA4 para que los eventos viajen al servidor."
+> "✅ ¡Los 4 tags de Meta Pixel están creados! Ahora necesitamos crear los tags GA4 para que los eventos viajen al servidor."
 
 ---
 
@@ -714,31 +633,7 @@ fbq('track', 'Purchase', {
 
 ---
 
-### Paso 2.2 — Crear Tag: GA4 - ViewContent Show
-
-> "Creá etiqueta nueva. Nombre: GA4 - ViewContent Show. Tipo: Evento de GA4.
->
-> Nombre del evento: view_content
-> (MISMO nombre que el anterior — usamos el nombre estándar y diferenciamos con parámetros)
->
-> MISMOS 13 parámetros que el anterior pero cambiá:
-> - content_name: Seccion_Show
-> - content_ids: show
-> - value: 500
->
-> Activación: el trigger de Show Section (PV o EV, el que creamos).
->
-> ¿Podés crearlo con esos datos?"
-
-**Esperar respuesta**
-
-> "Guardá. ¿Guardó?"
-
-**Esperar respuesta**
-
----
-
-### Paso 2.3 — Crear Tag: GA4 - Contact WhatsApp
+### Paso 2.2 — Crear Tag: GA4 - Contact WhatsApp
 
 > "Creá etiqueta nueva. Nombre: GA4 - Contact WhatsApp. Tipo: Evento de GA4.
 >
@@ -763,14 +658,14 @@ fbq('track', 'Purchase', {
 
 ---
 
-### Paso 2.4 — Crear Tag: GA4 - Lead DK
+### Paso 2.3 — Crear Tag: GA4 - Lead DK
 
 > "Creá etiqueta nueva. Nombre: GA4 - Lead DK. Tipo: Evento de GA4.
 >
 > Nombre del evento: generate_lead
 > (MISMO nombre que el Lead del formulario que ya tenés. Esto es intencional — Meta va a recibir ambos como evento 'Lead' estándar, y los diferenciamos con content_name y content_category.)
 >
-> ⚠️ NOTA IMPORTANTE: Ya tenés un evento generate_lead para el formulario. Este segundo Lead (vista de /dk/) va a disparar el MISMO trigger y tag CAPI que ya existe en el servidor. Meta va a recibir dos tipos de Lead con distinto content_name. Esto es CORRECTO y es la forma recomendada: un solo tipo de evento estándar, diferenciado por parámetros. La alternativa sería un evento custom (ej: 'lead_dk') pero perderías la optimización de conversión de Meta para eventos estándar.
+> ⚠️ NOTA IMPORTANTE: La página /dk/ es la que Germán envía PERSONALMENTE a directores de cultura por WhatsApp. Son oportunidades de venta calificadas — personas que ya fueron contactadas directamente. Por eso tiene un valor más alto ($1200) que el Lead del formulario ($0). Ambos llegan a Meta como evento estándar 'Lead' y se diferencian por content_name. El trigger y tag CAPI del servidor que ya existen los manejan automáticamente.
 >
 > Parámetros base: event_id, em, ph, fn, ln, fbp, fbc, client_user_agent. Cambiá:
 > - content_name: Presentacion_DK
@@ -790,12 +685,14 @@ fbq('track', 'Purchase', {
 
 ---
 
-### Paso 2.5 — Crear Tag: GA4 - Purchase Presupuesto
+### Paso 2.4 — Crear Tag: GA4 - Purchase Presupuesto
 
 > "Último tag GA4. Nombre: GA4 - Purchase Presupuesto. Tipo: Evento de GA4.
 >
 > Nombre del evento: purchase
 > (Nombre estándar que mapea a 'Purchase' de Meta)
+>
+> NOTA: La página /presupuesto2026.html es la que Germán envía a prospectos avanzados que ya pidieron precio. Estas personas están en la etapa final del embudo de venta — por eso el valor es el más alto ($2000).
 >
 > Parámetros base: event_id, em, ph, fn, ln, fbp, fbc, client_user_agent. Cambiá:
 > - content_name: Presupuesto_2026
@@ -836,14 +733,14 @@ fbq('track', 'Purchase', {
 
 ### Paso 3.1 — Crear Triggers del Servidor
 
-> "Ahora viene algo importante. Como usamos nombres ESTÁNDAR de GA4, necesitamos MENOS triggers que tags. Te explico:
+> "Necesitamos crear triggers nuevos para los eventos. Te explico cuáles:
 >
-> - 'view_content' → UN solo trigger para AMBOS ViewContent (Home y Show)
+> - 'view_content' → UN trigger para ViewContent Home
 > - 'contact' → UN trigger para Contact WhatsApp
 > - 'generate_lead' → Ya EXISTE el trigger 'CE - Generate Lead'. NO creamos otro — el Lead DK va a usar el mismo trigger.
 > - 'purchase' → UN trigger para Purchase
 >
-> O sea, solo necesitamos crear 3 triggers nuevos (no 5). ¿Entendido?"
+> O sea, solo necesitamos crear 3 triggers nuevos. ¿Entendido?"
 
 **Esperar respuesta**
 
@@ -893,7 +790,7 @@ fbq('track', 'Purchase', {
 
 ### Paso 3.2 — Crear Tag: Meta CAPI - ViewContent
 
-> "Andá a 'Etiquetas' y creá una nueva. Nombre: Meta CAPI - ViewContent (sin Home ni Show — un solo tag maneja ambos). ¿Quedó?"
+> "Andá a 'Etiquetas' y creá una nueva. Nombre: Meta CAPI - ViewContent. ¿Quedó?"
 
 **Esperar respuesta**
 
@@ -929,7 +826,7 @@ fbq('track', 'Purchase', {
 
 > "**Enable Event Enhancement:** activado. ¿Quedó?
 >
-> NOTA: Con Event Enhancement activado, el tag toma automáticamente los parámetros que vienen del evento GA4 (content_name, content_type, content_ids, value, currency). Por eso NO necesitamos tags separados para Home y Show — los parámetros ya vienen diferenciados desde el GA4."
+> NOTA: Con Event Enhancement activado, el tag toma automáticamente los parámetros que vienen del evento GA4 (content_name, content_type, content_ids, value, currency). Los parámetros fluyen del GA4 al CAPI sin configuración adicional."
 
 **Esperar respuesta**
 
@@ -959,7 +856,7 @@ fbq('track', 'Purchase', {
 
 **Esperar respuesta paso a paso**
 
-> "Activación: seleccioná 'CE - ViewContent' (el trigger que creamos). Este mismo trigger y tag manejan TANTO el ViewContent Home como el Show. ¿Quedó?"
+> "Activación: seleccioná 'CE - ViewContent' (el trigger que creamos). ¿Quedó?"
 
 **Esperar respuesta**
 
@@ -967,7 +864,7 @@ fbq('track', 'Purchase', {
 
 **Esperar respuesta**
 
-> "✅ Tag CAPI de ViewContent listo. UN solo tag para ambos eventos."
+> "✅ Tag CAPI de ViewContent listo."
 
 ---
 
@@ -1024,12 +921,12 @@ fbq('track', 'Purchase', {
 >
 > GTM Server:
 > - Meta CAPI - PageView (ya existía)
-> - Meta CAPI - Lead (ya existía — ahora también maneja Lead DK)
-> - Meta CAPI - ViewContent (NUEVO — maneja Home Y Show)
+> - Meta CAPI - Lead (ya existía — ahora también maneja Lead DK automáticamente)
+> - Meta CAPI - ViewContent (NUEVO)
 > - Meta CAPI - Contact (NUEVO)
 > - Meta CAPI - Purchase (NUEVO)
 >
-> Solo 3 tags nuevos en vez de 5, porque usamos nombres estándar y Event Enhancement. Más limpio y más fácil de mantener.
+> Solo 3 tags nuevos, porque el Lead DK reutiliza el tag CAPI existente.
 >
 > ¿Seguimos con la publicación y verificación?"
 
@@ -1162,13 +1059,15 @@ fbq('track', 'Purchase', {
 
 > "¡Felicitaciones Germán! Tu tracking está completo. Resumo lo que configuramos:
 >
-> **5 eventos nuevos en el browser (Pixel + GA4), 3 tags CAPI nuevos en el servidor:**
+> **4 eventos nuevos en el browser (Pixel + GA4), 3 tags CAPI nuevos en el servidor:**
 >
-> 1. ⭐ ViewContent Home ($300) — Mide todo el tráfico → CAPI: ViewContent (compartido)
-> 2. ⭐⭐ ViewContent Show ($500) — Mide interés en el show → CAPI: ViewContent (compartido)
-> 3. ⭐⭐⭐⭐ Contact WhatsApp ($1,000) — Tu CONVERSIÓN PRINCIPAL → CAPI: Contact
-> 4. ⭐⭐⭐ Lead DK ($1,200) — Presentaciones enviadas → CAPI: Lead (reutiliza existente)
-> 5. ⭐⭐⭐ Purchase Presupuesto ($2,000) — Presupuestos vistos → CAPI: Purchase
+> 1. ⭐ ViewContent Home ($300) — Mide todo el tráfico a la landing → CAPI: ViewContent
+> 2. ⭐⭐⭐⭐ Contact WhatsApp ($1,000) — Tu CONVERSIÓN PRINCIPAL → CAPI: Contact
+> 3. ⭐⭐⭐ Lead DK ($1,200) — Directores de cultura contactados personalmente → CAPI: Lead (reutiliza existente)
+> 4. ⭐⭐⭐ Purchase Presupuesto ($2,000) — Prospectos que piden precio → CAPI: Purchase
+>
+> Tu embudo queda así:
+> Landing (ViewContent $300) → WhatsApp (Contact $1000) → Presentación DK (Lead $1200) → Presupuesto (Purchase $2000)
 >
 > Todo con:
 > - Deduplicación por event_id en TODOS los eventos
@@ -1266,7 +1165,9 @@ fbq('track', 'Purchase', {
 
 10. **action_source: 'website'** debe estar configurado en TODOS los tags CAPI del servidor. Esto le indica a Meta que el evento proviene del sitio web y mejora la atribución.
 
-11. **Event Enhancement** en los tags CAPI permite que los parámetros enviados desde GA4 (content_name, content_type, content_ids, value, currency) fluyan automáticamente al tag CAPI sin configuración adicional. Por eso no necesitamos tags CAPI separados para Home y Show — un solo tag "ViewContent" maneja ambos.
+11. **Event Enhancement** en los tags CAPI permite que los parámetros enviados desde GA4 (content_name, content_type, content_ids, value, currency) fluyan automáticamente al tag CAPI sin configuración adicional.
+
+12. **SOBRE /dk/ y /presupuesto2026:** Estas páginas NO están linkeadas desde la landing page. Germán las envía personalmente por WhatsApp a prospectos avanzados. Son páginas de embudo privado — los directores de cultura reciben /dk/ y los que piden precio reciben /presupuesto2026.
 
 ---
 
@@ -1316,19 +1217,27 @@ USUARIO VISITA LASERMAN.COM.AR
 
 ### MAPEO DE EVENTOS GA4 → META (nombres estándar)
 
-| GA4 Event Name | Meta Standard Event | Server Trigger | Diferenciación |
-|----------------|-------------------|----------------|----------------|
-| `view_content` | ViewContent | CE - ViewContent | content_name: Home_General / Seccion_Show |
-| `contact` | Contact | CE - Contact | content_name: WhatsApp_Home |
-| `generate_lead` | Lead | CE - Generate Lead (existente) | content_name: Formulario Web / Presentacion_DK |
-| `purchase` | Purchase | CE - Purchase | content_name: Presupuesto_2026 |
+| GA4 Event Name | Meta Standard Event | Server Trigger | Origen del tráfico |
+|----------------|-------------------|----------------|-------------------|
+| `view_content` | ViewContent | CE - ViewContent | Landing page (público general) |
+| `contact` | Contact | CE - Contact | Clic WhatsApp desde landing |
+| `generate_lead` | Lead | CE - Generate Lead (existente) | Formulario web / Página DK (enviada personalmente) |
+| `purchase` | Purchase | CE - Purchase | Presupuesto (enviado a prospectos avanzados) |
+
+### EMBUDO DE CONVERSIÓN
+
+```
+Landing laserman.com.ar    →  WhatsApp    →  /dk/ (directores)   →  /presupuesto2026
+ViewContent $300              Contact $1000   Lead $1200              Purchase $2000
+(público general)             (interesados)   (contacto personal)     (pidieron precio)
+```
 
 ### RESUMEN DE TAGS/TRIGGERS NUEVOS
 
-**GTM Web (5 pixel tags + 5 GA4 tags + 5 triggers):**
-- Tags Pixel: ViewContent Home, ViewContent Show, Contact WhatsApp, Lead DK, Purchase Presupuesto
-- Tags GA4: ViewContent Home, ViewContent Show, Contact WhatsApp, Lead DK, Purchase Presupuesto
-- Triggers: PV - Home, PV/EV - Show Section, Click - WhatsApp, PV - DK, PV - Presupuesto
+**GTM Web (4 pixel tags + 4 GA4 tags + 4 triggers):**
+- Tags Pixel: ViewContent Home, Contact WhatsApp, Lead DK, Purchase Presupuesto
+- Tags GA4: ViewContent Home, Contact WhatsApp, Lead DK, Purchase Presupuesto
+- Triggers: PV - Home, Click - WhatsApp, PV - DK, PV - Presupuesto
 
 **GTM Server (3 tags CAPI + 3 triggers nuevos):**
 - Tags CAPI: ViewContent, Contact, Purchase (Lead DK usa el tag CAPI existente)
