@@ -294,53 +294,26 @@ Cuando Germán inicie la conversación, decí:
 
 **Esperar respuesta**
 
-> "ANTES DE ELEGIR EL TIPO: Necesito que abras tu sitio laserman.com.ar, hagas clic derecho en el botón de WhatsApp, y elijas 'Inspeccionar' o 'Inspect'. ¿Qué ves? ¿Es un enlace (etiqueta `<a>`) con un href? ¿O es un botón (`<button>`) o un div con JavaScript?"
+> "Tipo: buscá 'Solo enlaces' o 'Just Links' o 'Clic - Solo enlaces'. ¿Lo encontraste?"
 
 **Esperar respuesta**
 
-**Si es un enlace `<a>` con href que contiene wa.me O api.whatsapp.com:**
-
-> "Perfecto. Tipo: buscá 'Solo enlaces' o 'Just Links' o 'Clic - Solo enlaces'. ¿Lo encontraste?"
-
-**Esperar respuesta**
-
-> "Seleccionalo. Elegí 'Algunos clics en enlaces'. Necesitamos cubrir TODAS las variantes de WhatsApp. Configurá:
+> "Seleccionalo. Elegí 'Algunos clics en enlaces'. En la condición:
 > - Primer campo: 'Click URL'
-> - Operador: 'coincide con la expresión regular' o 'matches RegEx'
-> - Valor: wa\.me|api\.whatsapp\.com|whatsapp://
+> - Operador: 'contiene'
+> - Valor: wa.me
 >
-> Eso es: w-a, barra invertida, punto, m-e, barra vertical, a-p-i, punto, w-h-a-t-s-a-p-p, punto, c-o-m, barra vertical, w-h-a-t-s-a-p-p, dos puntos, barra, barra.
+> O si tu botón de WhatsApp usa api.whatsapp.com, poné eso en vez de wa.me.
 >
-> Esta expresión regular captura las 3 formas posibles de enlace de WhatsApp. ¿Quedó?"
+> ¿Cuál usa tu botón de WhatsApp? ¿wa.me o api.whatsapp.com?"
 
-**Esperar respuesta**
-
-> "Tildá también la casilla de 'Esperar etiquetas' o 'Wait for Tags' si aparece. Y en 'Verificar validación' marcá 'Habilitar'. Esto asegura que GTM capture el clic aunque la página redirija. ¿Hecho?"
-
-**Esperar respuesta**
+**Esperar respuesta y adaptar**
 
 > "Guardá. ¿Guardó?"
 
 **Esperar respuesta**
 
-**Si es un botón con JavaScript (NO es un enlace `<a>`) o si usa whatsapp://:**
-
-> "Entonces no podemos usar 'Solo enlaces'. Vamos a usar 'Todos los elementos' o 'All Elements'. ¿Lo encontraste?"
-
-**Esperar respuesta**
-
-> "Elegí 'Algunos clics'. Ahora necesitamos identificar el botón. ¿Tiene un ID (por ejemplo id='whatsapp-btn')? ¿O tiene una clase CSS específica? Decime qué atributos ves en el inspector."
-
-**Esperar respuesta y adaptar según lo que diga:**
-
-> "Configurá la condición con:
-> - Primer campo: 'Click ID' o 'Click Classes' (según lo que tenga el botón)
-> - Operador: 'contiene'
-> - Valor: [lo que identifique al botón de WhatsApp]
->
-> ¿Quedó? Guardá."
-
-**Esperar respuesta**
+> "Si el botón no es un enlace sino un botón con JavaScript, vamos a necesitar otro enfoque. Probemos primero con este y verificamos después."
 
 ---
 
@@ -413,8 +386,6 @@ Cuando Germán inicie la conversación, decí:
 fbq('track', 'ViewContent', {
   content_name: 'Home_General',
   content_category: 'pagina',
-  content_type: 'page',
-  content_ids: ['home'],
   currency: 'ARS',
   value: 300
 }, {eventID: '{{DL - Event ID}}'});
@@ -436,12 +407,6 @@ fbq('track', 'ViewContent', {
 >
 > Siguiente línea:
 > content, guión bajo, category, dos puntos, espacio, comilla simple, pagina, comilla simple, coma.
->
-> Siguiente línea:
-> content, guión bajo, type, dos puntos, espacio, comilla simple, page, comilla simple, coma.
->
-> Siguiente línea:
-> content, guión bajo, ids, dos puntos, espacio, abre corchete, comilla simple, home, comilla simple, cierra corchete, coma.
 >
 > Siguiente línea:
 > currency, dos puntos, espacio, comilla simple, A-R-S, comilla simple, coma.
@@ -505,8 +470,6 @@ fbq('track', 'ViewContent', {
 fbq('track', 'ViewContent', {
   content_name: 'Seccion_Show',
   content_category: 'seccion',
-  content_type: 'page',
-  content_ids: ['show'],
   currency: 'ARS',
   value: 500
 }, {eventID: '{{DL - Event ID}}'});
@@ -570,14 +533,12 @@ fbq('track', 'Contact', {
 <script>
 fbq('track', 'Lead', {
   content_name: 'Presentacion_DK',
-  content_category: 'lead_dk',
+  content_category: 'lead',
   currency: 'ARS',
   value: 1200
 }, {eventID: '{{DL - Event ID}}'});
 </script>
 ```
-
-> "⚠️ NOTA: Ya tenés un tag 'Meta Pixel - Lead' para el formulario. Este segundo tag de Lead envía el MISMO tipo de evento a Meta pero con diferente content_name ('Presentacion_DK' vs 'Formulario Web') y content_category ('lead_dk'). En Meta Events Manager vas a ver ambos como 'Lead' y podés diferenciarlos por esos parámetros."
 
 > "Secuenciación → 'Meta Pixel - Base' antes. Activación → 'PV - DK'. ¿Todo?"
 
@@ -642,10 +603,8 @@ fbq('track', 'Purchase', {
 
 **Esperar respuesta**
 
-> "En 'Nombre del evento' escribí: view_content
-> Así, todo en minúscula con guión bajo: view, guión bajo, content. ¿Quedó?
->
-> IMPORTANTE: Usamos el nombre estándar 'view_content' (SIN '_home'). El tag de CAPI en el servidor mapea automáticamente 'view_content' al evento estándar 'ViewContent' de Meta. Si usáramos un nombre inventado como 'view_content_home', el mapeo automático NO funcionaría. Diferenciamos con los parámetros, no con el nombre del evento."
+> "En 'Nombre del evento' escribí: view_content_home
+> Así, todo en minúscula con guiones bajos: view, guión bajo, content, guión bajo, home. ¿Quedó?"
 
 **Esperar respuesta**
 
@@ -660,47 +619,39 @@ fbq('track', 'Purchase', {
 
 **Esperar respuesta**
 
-> "Tercero: content_type — Valor: page. ¿Quedó?"
+> "Tercero: value — Valor: 300. ¿Quedó?"
 
 **Esperar respuesta**
 
-> "Cuarto: content_ids — Valor: home. ¿Quedó?"
+> "Cuarto: currency — Valor: ARS. ¿Quedó?"
 
 **Esperar respuesta**
 
-> "Quinto: value — Valor: 300. ¿Quedó?"
+> "Quinto: em — Valor: {{DL - em}}. ¿Quedó?"
 
 **Esperar respuesta**
 
-> "Sexto: currency — Valor: ARS. ¿Quedó?"
+> "Sexto: ph — Valor: {{DL - ph}}. ¿Quedó?"
 
 **Esperar respuesta**
 
-> "Séptimo: em — Valor: {{DL - em}}. ¿Quedó?"
+> "Séptimo: fn — Valor: {{DL - fn}}. ¿Quedó?"
 
 **Esperar respuesta**
 
-> "Octavo: ph — Valor: {{DL - ph}}. ¿Quedó?"
+> "Octavo: ln — Valor: {{DL - ln}}. ¿Quedó?"
 
 **Esperar respuesta**
 
-> "Noveno: fn — Valor: {{DL - fn}}. ¿Quedó?"
+> "Noveno: fbp — Valor: {{DL - fbp}}. ¿Quedó?"
 
 **Esperar respuesta**
 
-> "Décimo: ln — Valor: {{DL - ln}}. ¿Quedó?"
+> "Décimo: fbc — Valor: {{DL - fbc}}. ¿Quedó?"
 
 **Esperar respuesta**
 
-> "Undécimo: fbp — Valor: {{DL - fbp}}. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "Duodécimo: fbc — Valor: {{DL - fbc}}. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "Décimo tercero y último: client_user_agent — Valor: {{JS - User Agent}}. ¿Quedó?"
+> "Undécimo y último: client_user_agent — Valor: {{JS - User Agent}}. ¿Quedó?"
 
 **Esperar respuesta**
 
@@ -718,12 +669,10 @@ fbq('track', 'Purchase', {
 
 > "Creá etiqueta nueva. Nombre: GA4 - ViewContent Show. Tipo: Evento de GA4.
 >
-> Nombre del evento: view_content
-> (MISMO nombre que el anterior — usamos el nombre estándar y diferenciamos con parámetros)
+> Nombre del evento: view_content_show
 >
-> MISMOS 13 parámetros que el anterior pero cambiá:
+> MISMOS 11 parámetros que el anterior pero cambiá:
 > - content_name: Seccion_Show
-> - content_ids: show
 > - value: 500
 >
 > Activación: el trigger de Show Section (PV o EV, el que creamos).
@@ -742,14 +691,11 @@ fbq('track', 'Purchase', {
 
 > "Creá etiqueta nueva. Nombre: GA4 - Contact WhatsApp. Tipo: Evento de GA4.
 >
-> Nombre del evento: contact
-> (Nombre estándar de GA4 que mapea a 'Contact' de Meta)
+> Nombre del evento: contact_whatsapp
 >
-> MISMOS parámetros base (event_id, em, ph, fn, ln, fbp, fbc, client_user_agent) pero cambiá:
+> MISMOS 11 parámetros pero cambiá:
 > - content_name: WhatsApp_Home
 > - value: 1000
-> - currency: ARS
-> - (NO lleva content_type ni content_ids — esos son solo para ViewContent)
 >
 > Activación: 'Click - WhatsApp'.
 >
@@ -767,16 +713,11 @@ fbq('track', 'Purchase', {
 
 > "Creá etiqueta nueva. Nombre: GA4 - Lead DK. Tipo: Evento de GA4.
 >
-> Nombre del evento: generate_lead
-> (MISMO nombre que el Lead del formulario que ya tenés. Esto es intencional — Meta va a recibir ambos como evento 'Lead' estándar, y los diferenciamos con content_name y content_category.)
+> Nombre del evento: lead_dk
 >
-> ⚠️ NOTA IMPORTANTE: Ya tenés un evento generate_lead para el formulario. Este segundo Lead (vista de /dk/) va a disparar el MISMO trigger y tag CAPI que ya existe en el servidor. Meta va a recibir dos tipos de Lead con distinto content_name. Esto es CORRECTO y es la forma recomendada: un solo tipo de evento estándar, diferenciado por parámetros. La alternativa sería un evento custom (ej: 'lead_dk') pero perderías la optimización de conversión de Meta para eventos estándar.
->
-> Parámetros base: event_id, em, ph, fn, ln, fbp, fbc, client_user_agent. Cambiá:
+> MISMOS 11 parámetros pero cambiá:
 > - content_name: Presentacion_DK
-> - content_category: lead_dk
 > - value: 1200
-> - currency: ARS
 >
 > Activación: 'PV - DK'.
 >
@@ -794,14 +735,11 @@ fbq('track', 'Purchase', {
 
 > "Último tag GA4. Nombre: GA4 - Purchase Presupuesto. Tipo: Evento de GA4.
 >
-> Nombre del evento: purchase
-> (Nombre estándar que mapea a 'Purchase' de Meta)
+> Nombre del evento: purchase_presupuesto
 >
-> Parámetros base: event_id, em, ph, fn, ln, fbp, fbc, client_user_agent. Cambiá:
+> MISMOS 11 parámetros pero cambiá:
 > - content_name: Presupuesto_2026
-> - content_category: presupuesto
 > - value: 2000
-> - currency: ARS
 >
 > Activación: 'PV - Presupuesto'.
 >
@@ -836,64 +774,40 @@ fbq('track', 'Purchase', {
 
 ### Paso 3.1 — Crear Triggers del Servidor
 
-> "Ahora viene algo importante. Como usamos nombres ESTÁNDAR de GA4, necesitamos MENOS triggers que tags. Te explico:
+> "Necesitamos crear 5 triggers nuevos, uno para cada evento que creamos. Empezamos.
 >
-> - 'view_content' → UN solo trigger para AMBOS ViewContent (Home y Show)
-> - 'contact' → UN trigger para Contact WhatsApp
-> - 'generate_lead' → Ya EXISTE el trigger 'CE - Generate Lead'. NO creamos otro — el Lead DK va a usar el mismo trigger.
-> - 'purchase' → UN trigger para Purchase
+> Hacé clic en 'Nuevo'. Nombre: CE - ViewContent Home.
+> C-E, espacio, guión medio, espacio, ViewContent, espacio, Home. ¿Quedó?"
+
+**Esperar respuesta**
+
+> "Tipo: 'Evento personalizado' o 'Custom Event'. En el nombre del evento escribí: view_content_home
+> (exactamente igual que en el tag GA4 del web). ¿Quedó?"
+
+**Esperar respuesta**
+
+> "Guardá. ¿Guardó?"
+
+**Esperar respuesta**
+
+> "Ahora creá los otros 4 de la misma forma:
 >
-> O sea, solo necesitamos crear 3 triggers nuevos (no 5). ¿Entendido?"
+> 2. CE - ViewContent Show → evento: view_content_show
+> 3. CE - Contact WhatsApp → evento: contact_whatsapp
+> 4. CE - Lead DK → evento: lead_dk
+> 5. CE - Purchase Presupuesto → evento: purchase_presupuesto
+>
+> Crealos de a uno. Avisame cuando termines los 4."
 
-**Esperar respuesta**
+**Esperar respuesta, ir verificando nombre por nombre**
 
-> "Empezamos. Hacé clic en 'Nuevo'. Nombre: CE - ViewContent.
-> C-E, espacio, guión medio, espacio, ViewContent. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "Tipo: 'Evento personalizado' o 'Custom Event'. En el nombre del evento escribí: view_content
-> (exactamente igual que en los tags GA4 del web). ¿Quedó?"
-
-**Esperar respuesta**
-
-> "Guardá. ¿Guardó?"
-
-**Esperar respuesta**
-
-> "Segundo trigger. Nombre: CE - Contact.
-> C-E, espacio, guión medio, espacio, Contact. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "Tipo: 'Evento personalizado'. Nombre del evento: contact. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "Guardá. ¿Guardó?"
-
-**Esperar respuesta**
-
-> "Tercer y último trigger. Nombre: CE - Purchase.
-> C-E, espacio, guión medio, espacio, Purchase. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "Tipo: 'Evento personalizado'. Nombre del evento: purchase. ¿Quedó?"
-
-**Esperar respuesta**
-
-> "Guardá. ¿Guardó?"
-
-**Esperar respuesta**
-
-> "✅ Perfecto. Solo 3 triggers nuevos. El Lead DK reutiliza el trigger 'CE - Generate Lead' que ya existe. Ahora los tags CAPI."
+> "✅ Perfecto. Ahora los tags CAPI."
 
 ---
 
-### Paso 3.2 — Crear Tag: Meta CAPI - ViewContent
+### Paso 3.2 — Crear Tag: Meta CAPI - ViewContent Home
 
-> "Andá a 'Etiquetas' y creá una nueva. Nombre: Meta CAPI - ViewContent (sin Home ni Show — un solo tag maneja ambos). ¿Quedó?"
+> "Andá a 'Etiquetas' y creá una nueva. Nombre: Meta CAPI - ViewContent Home. ¿Quedó?"
 
 **Esperar respuesta**
 
@@ -915,7 +829,7 @@ fbq('track', 'Purchase', {
 
 **Esperar respuesta**
 
-> "**Action Source:** seleccioná 'website'. Esto le dice a Meta que el evento viene de tu sitio web. ¿Quedó?"
+> "**Action Source:** seleccioná 'website'. ¿Quedó?"
 
 **Esperar respuesta**
 
@@ -927,9 +841,7 @@ fbq('track', 'Purchase', {
 
 **Esperar respuesta**
 
-> "**Enable Event Enhancement:** activado. ¿Quedó?
->
-> NOTA: Con Event Enhancement activado, el tag toma automáticamente los parámetros que vienen del evento GA4 (content_name, content_type, content_ids, value, currency). Por eso NO necesitamos tags separados para Home y Show — los parámetros ya vienen diferenciados desde el GA4."
+> "**Enable Event Enhancement:** activado. ¿Quedó?"
 
 **Esperar respuesta**
 
@@ -959,7 +871,7 @@ fbq('track', 'Purchase', {
 
 **Esperar respuesta paso a paso**
 
-> "Activación: seleccioná 'CE - ViewContent' (el trigger que creamos). Este mismo trigger y tag manejan TANTO el ViewContent Home como el Show. ¿Quedó?"
+> "Activación: seleccioná 'CE - ViewContent Home' (el trigger que creamos). ¿Quedó?"
 
 **Esperar respuesta**
 
@@ -967,69 +879,81 @@ fbq('track', 'Purchase', {
 
 **Esperar respuesta**
 
-> "✅ Tag CAPI de ViewContent listo. UN solo tag para ambos eventos."
+> "✅ Primer tag CAPI listo."
 
 ---
 
-### Paso 3.3 — Crear Tag: Meta CAPI - Contact
+### Paso 3.3 — Crear los otros 4 Tags CAPI
 
-> "**TRUCO:** Podés COPIAR el tag que acabamos de crear y modificar solo 3 cosas. Andá a Etiquetas, hacé clic en los tres puntitos (⋮) al lado de 'Meta CAPI - ViewContent' y elegí 'Copiar'. ¿Se creó la copia?"
+> "Los otros 4 tags CAPI son IDÉNTICOS en estructura al que acabamos de crear. Cambian solo 3 cosas: el nombre del tag, el evento Meta, y el trigger.
+>
+> **TRUCO:** Podés COPIAR el tag que acabamos de crear y modificar esas 3 cosas. ¿Querés hacer eso? Es más rápido."
+
+**Esperar respuesta**
+
+**Si quiere copiar:**
+> "Andá a Etiquetas, hacé clic en los tres puntitos (⋮) al lado de 'Meta CAPI - ViewContent Home' y elegí 'Copiar'. ¿Se creó la copia?"
 
 **Esperar respuesta**
 
 > "Abrí la copia y hacé estos cambios:
 >
-> - Nombre: Meta CAPI - Contact
-> - Event Name Standard: cambiá a 'Contact'
-> - Trigger: cambiá a 'CE - Contact'
-> - Todo lo demás queda IGUAL (token, pixel, user data, action source, etc.)
+> **Tag 2 — Meta CAPI - ViewContent Show:**
+> - Nombre: Meta CAPI - ViewContent Show
+> - Event Name Standard: ViewContent (ya está)
+> - Trigger: cambiá a 'CE - ViewContent Show'
 > - Guardá.
 >
 > ¿Hecho?"
 
 **Esperar respuesta**
 
----
-
-### Paso 3.4 — Sobre Lead DK: NO crear tag nuevo
-
-> "Para Lead DK NO necesitamos crear un tag CAPI nuevo. ¿Por qué? Porque el evento GA4 'generate_lead' que configuramos en el web YA tiene un trigger existente en el servidor ('CE - Generate Lead') y un tag CAPI existente ('Meta CAPI - Lead').
+> "Copiá el original de nuevo para el siguiente:
 >
-> Cuando alguien visite /dk/, el GA4 va a enviar 'generate_lead' al servidor → el trigger existente lo captura → el tag CAPI existente lo envía a Meta como 'Lead'. Los parámetros (content_name: Presentacion_DK, value: 1200) viajan automáticamente por Event Enhancement.
+> **Tag 3 — Meta CAPI - Contact WhatsApp:**
+> - Nombre: Meta CAPI - Contact WhatsApp
+> - Event Name: cambiá a 'Standard' → 'Contact'
+> - Trigger: cambiá a 'CE - Contact WhatsApp'
+> - Guardá.
 >
-> Esto significa que Meta va a recibir dos tipos de Lead:
-> - Lead del formulario (content_name: Formulario Web, value: 0)
-> - Lead de /dk/ (content_name: Presentacion_DK, value: 1200)
->
-> Ambos llegan como evento estándar 'Lead' y podés diferenciarlos en Meta Events Manager por content_name. ¿Entendido?"
+> ¿Hecho?"
 
 **Esperar respuesta**
 
----
-
-### Paso 3.5 — Crear Tag: Meta CAPI - Purchase
-
-> "Último tag CAPI. Copiá 'Meta CAPI - ViewContent' otra vez y modificá:
+> "Siguiente copia:
 >
-> - Nombre: Meta CAPI - Purchase
+> **Tag 4 — Meta CAPI - Lead DK:**
+> - Nombre: Meta CAPI - Lead DK
+> - Event Name Standard: Lead (igual que el existente)
+> - Trigger: cambiá a 'CE - Lead DK'
+> - Guardá.
+>
+> ¿Hecho?"
+
+**Esperar respuesta**
+
+> "Última copia:
+>
+> **Tag 5 — Meta CAPI - Purchase Presupuesto:**
+> - Nombre: Meta CAPI - Purchase Presupuesto
 > - Event Name Standard: seleccioná 'Purchase'
-> - Trigger: cambiá a 'CE - Purchase'
+> - Trigger: cambiá a 'CE - Purchase Presupuesto'
 > - Guardá.
 >
 > ¿Hecho?"
 
 **Esperar respuesta**
 
-> "✅ ¡Módulo 3 completo! Resumen de lo que tiene ahora el servidor:
+> "✅ ¡Módulo 3 completo! Ahora tenemos todo configurado. El resumen:
 >
-> GTM Server:
+> GTM Server ahora tiene:
 > - Meta CAPI - PageView (ya existía)
-> - Meta CAPI - Lead (ya existía — ahora también maneja Lead DK)
-> - Meta CAPI - ViewContent (NUEVO — maneja Home Y Show)
-> - Meta CAPI - Contact (NUEVO)
-> - Meta CAPI - Purchase (NUEVO)
->
-> Solo 3 tags nuevos en vez de 5, porque usamos nombres estándar y Event Enhancement. Más limpio y más fácil de mantener.
+> - Meta CAPI - Lead (ya existía)
+> - Meta CAPI - ViewContent Home (NUEVO)
+> - Meta CAPI - ViewContent Show (NUEVO)
+> - Meta CAPI - Contact WhatsApp (NUEVO)
+> - Meta CAPI - Lead DK (NUEVO)
+> - Meta CAPI - Purchase Presupuesto (NUEVO)
 >
 > ¿Seguimos con la publicación y verificación?"
 
@@ -1162,20 +1086,15 @@ fbq('track', 'Purchase', {
 
 > "¡Felicitaciones Germán! Tu tracking está completo. Resumo lo que configuramos:
 >
-> **5 eventos nuevos en el browser (Pixel + GA4), 3 tags CAPI nuevos en el servidor:**
+> **5 eventos nuevos, cada uno con Pixel + CAPI:**
 >
-> 1. ⭐ ViewContent Home ($300) — Mide todo el tráfico → CAPI: ViewContent (compartido)
-> 2. ⭐⭐ ViewContent Show ($500) — Mide interés en el show → CAPI: ViewContent (compartido)
-> 3. ⭐⭐⭐⭐ Contact WhatsApp ($1,000) — Tu CONVERSIÓN PRINCIPAL → CAPI: Contact
-> 4. ⭐⭐⭐ Lead DK ($1,200) — Presentaciones enviadas → CAPI: Lead (reutiliza existente)
-> 5. ⭐⭐⭐ Purchase Presupuesto ($2,000) — Presupuestos vistos → CAPI: Purchase
+> 1. ⭐ ViewContent Home ($300) — Mide todo el tráfico
+> 2. ⭐⭐ ViewContent Show ($500) — Mide interés en el show
+> 3. ⭐⭐⭐⭐ Contact WhatsApp ($1,000) — Tu CONVERSIÓN PRINCIPAL
+> 4. ⭐⭐⭐ Lead DK ($1,200) — Presentaciones enviadas
+> 5. ⭐⭐⭐ Purchase Presupuesto ($2,000) — Presupuestos vistos
 >
-> Todo con:
-> - Deduplicación por event_id en TODOS los eventos
-> - Datos de usuario para EMQ alto (em, ph, fn, ln, fbp, fbc, user_agent)
-> - Nombres estándar de GA4 que mapean automáticamente a Meta
-> - Event Enhancement activado para que los parámetros fluyan al servidor
-> - action_source: website en todos los tags CAPI
+> Todo con deduplicación por event_id y datos de usuario para EMQ alto.
 >
 > ¿Necesitás ayuda con algo más? ¿Configurar audiencias, campañas, o algo de HubSpot?"
 
@@ -1196,18 +1115,7 @@ fbq('track', 'Purchase', {
 > "El EMQ depende de los datos de usuario que enviás. Si no hay email/teléfono disponible (porque el usuario aún no llenó formulario), el EMQ será naturalmente más bajo. Eso es normal para sitios B2B sin login."
 
 ### Problema: Click WhatsApp no detecta
-> "Los botones de WhatsApp pueden usar distintos formatos de URL: wa.me, api.whatsapp.com, o whatsapp://. El trigger usa una regex que cubre los 3 casos: `wa\.me|api\.whatsapp\.com|whatsapp://`.
->
-> Si aún así no detecta, puede ser que:
-> 1. El botón usa javascript:void(0) o un event listener JS en vez de un enlace href → cambiá el trigger de 'Solo enlaces' a 'Todos los elementos' con condición Click Classes o Click ID que identifique el botón.
-> 2. El botón abre un modal o formulario antes de redirigir a WhatsApp → necesitás un trigger de Custom Event que se dispare cuando el modal envía.
-> 3. El enlace se genera dinámicamente con JavaScript → verificá con Preview que el Click URL contenga alguna de las 3 variantes."
-
-### Problema: Dos eventos Lead en Meta Events Manager
-> "Esto es INTENCIONAL. El Lead del formulario y el Lead de /dk/ llegan ambos como evento estándar 'Lead'. Se diferencian por content_name. En Meta Events Manager podés filtrar por content_name para ver cada uno por separado. Si querés separarlos completamente, la alternativa es crear un evento custom ('lead_dk') pero perdés la optimización de conversión de Meta."
-
-### Problema: Nombres de eventos GA4 no coinciden con Meta
-> "Si usaste nombres custom en GA4 (como view_content_home en vez de view_content), el tag CAPI en el servidor no va a mapear automáticamente al evento estándar de Meta. Solución: corregí el nombre del evento GA4 al nombre estándar y diferenciá con parámetros (content_name, content_category)."
+> "Si el botón usa javascript:void(0) o un event listener de JS en vez de un enlace href, cambiá el trigger de 'Solo enlaces' a 'Todos los elementos' con condición Click Classes o Click ID que identifique el botón."
 
 ---
 
@@ -1237,36 +1145,17 @@ fbq('track', 'Purchase', {
 
 1. **NO borrar nada existente.** Los tags, triggers y variables actuales están funcionando. Solo AGREGAMOS nuevos.
 
-2. **Publicar SERVER antes que WEB.** Así cuando el web empiece a enviar, el servidor ya está listo para recibir. Si publicás el web primero, los eventos GA4 van a llegar al servidor pero no van a tener tags CAPI para procesarlos.
+2. **Publicar SERVER antes que WEB.** Así cuando el web empiece a enviar, el servidor ya está listo para recibir.
 
-3. **La variable DL - Event ID es FUNDAMENTAL.** Es la que genera el ID único para deduplicación. Si un nuevo tag no la usa, van a haber duplicados. TODOS los tags (Pixel browser Y GA4) deben incluir {{DL - Event ID}}.
+3. **La variable DL - Event ID es FUNDAMENTAL.** Es la que genera el ID único para deduplicación. Si un nuevo tag no la usa, van a haber duplicados.
 
-4. **NOMBRES DE EVENTOS GA4 — REGLA CRÍTICA:** Usamos nombres estándar de GA4 que mapean automáticamente a Meta:
-   - `view_content` → ViewContent
-   - `contact` → Contact
-   - `generate_lead` → Lead
-   - `purchase` → Purchase
+4. **Los 3 clicks de segmento (Boliche, Cultura, Productores)** existen como triggers pero NO tienen tags Meta Pixel asociados. Germán puede decidir si quiere agregarles tracking de Meta en el futuro.
 
-   **NUNCA** inventar nombres custom (como `view_content_home` o `contact_whatsapp`). Los nombres custom rompen el mapeo automático del tag CAPI en el servidor y Meta no los reconoce como eventos estándar, perdiendo optimización de conversión.
+5. **El Pixel ID real es 25699472449663830** (según la configuración actual del contenedor, tanto en el init del Pixel como en la variable del servidor).
 
-5. **ESTRATEGIA DE LEAD DUPLICADO:** El evento `generate_lead` se usa TANTO para el formulario existente como para la vista de /dk/. Ambos llegan a Meta como evento estándar "Lead" pero se diferencian por:
-   - `content_name`: "Formulario Web" vs "Presentacion_DK"
-   - `content_category`: "lead" vs "lead_dk"
-   - `value`: 0 vs 1200
+6. **El GA4 ID es G-J4JTN4JRE0** almacenado en la variable "Analitycs".
 
-   Esta es la forma correcta de manejar múltiples variantes de un mismo evento estándar. La alternativa (evento custom como `lead_dk`) perdería la optimización de conversión de Meta.
-
-6. **Los 3 clicks de segmento (Boliche, Cultura, Productores)** existen como triggers pero NO tienen tags Meta Pixel asociados. Germán puede decidir si quiere agregarles tracking de Meta en el futuro.
-
-7. **El Pixel ID real es 25699472449663830** (según la configuración actual del contenedor, tanto en el init del Pixel como en la variable del servidor).
-
-8. **El GA4 ID es G-J4JTN4JRE0** almacenado en la variable "Analitycs".
-
-9. **El Access Token está almacenado como constante** en el servidor. NO hace falta que Germán lo busque de nuevo.
-
-10. **action_source: 'website'** debe estar configurado en TODOS los tags CAPI del servidor. Esto le indica a Meta que el evento proviene del sitio web y mejora la atribución.
-
-11. **Event Enhancement** en los tags CAPI permite que los parámetros enviados desde GA4 (content_name, content_type, content_ids, value, currency) fluyan automáticamente al tag CAPI sin configuración adicional. Por eso no necesitamos tags CAPI separados para Home y Show — un solo tag "ViewContent" maneja ambos.
+7. **El Access Token está almacenado como constante** en el servidor. NO hace falta que Germán lo busque de nuevo.
 
 ---
 
@@ -1314,28 +1203,7 @@ USUARIO VISITA LASERMAN.COM.AR
  └────────────────────┘
 ```
 
-### MAPEO DE EVENTOS GA4 → META (nombres estándar)
-
-| GA4 Event Name | Meta Standard Event | Server Trigger | Diferenciación |
-|----------------|-------------------|----------------|----------------|
-| `view_content` | ViewContent | CE - ViewContent | content_name: Home_General / Seccion_Show |
-| `contact` | Contact | CE - Contact | content_name: WhatsApp_Home |
-| `generate_lead` | Lead | CE - Generate Lead (existente) | content_name: Formulario Web / Presentacion_DK |
-| `purchase` | Purchase | CE - Purchase | content_name: Presupuesto_2026 |
-
-### RESUMEN DE TAGS/TRIGGERS NUEVOS
-
-**GTM Web (5 pixel tags + 5 GA4 tags + 5 triggers):**
-- Tags Pixel: ViewContent Home, ViewContent Show, Contact WhatsApp, Lead DK, Purchase Presupuesto
-- Tags GA4: ViewContent Home, ViewContent Show, Contact WhatsApp, Lead DK, Purchase Presupuesto
-- Triggers: PV - Home, PV/EV - Show Section, Click - WhatsApp, PV - DK, PV - Presupuesto
-
-**GTM Server (3 tags CAPI + 3 triggers nuevos):**
-- Tags CAPI: ViewContent, Contact, Purchase (Lead DK usa el tag CAPI existente)
-- Triggers: CE - ViewContent, CE - Contact, CE - Purchase (Lead DK usa trigger existente)
-
 ---
 
 *Guía creada para LASERMAN.COM.AR — Febrero 2026*
 *Basada en configuración REAL de contenedores GTM exportados*
-*Corregida con nombres estándar de eventos y arquitectura simplificada*
