@@ -272,7 +272,7 @@
                 ],
                 "fingerprint": "1770465527070",
                 "firingTriggerId": [
-                    "73"
+                    "77"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -754,7 +754,7 @@
                 ],
                 "fingerprint": "1770468450292",
                 "firingTriggerId": [
-                    "69"
+                    "75"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -995,7 +995,7 @@
                 ],
                 "fingerprint": "1770465336932",
                 "firingTriggerId": [
-                    "57"
+                    "76"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -1249,24 +1249,476 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224097",
-                "tagId": "85",
-                "name": "FB_CONVERSIONS_API-25699472449663830-Server-Tag",
-                "type": "cvt_NCN6S",
+                "tagId": "87",
+                "name": "Meta CAPI - ViewContent Show",
+                "type": "cvt_5TP8W",
                 "parameter": [
                     {
                         "type": "TEMPLATE",
-                        "key": "pixelId",
-                        "value": "25699472449663830"
+                        "key": "logType",
+                        "value": "debug"
                     },
                     {
                         "type": "TEMPLATE",
-                        "key": "apiAccessToken",
-                        "value": "EAA0D5fYG7HQBQqSIqvqNyLnCqD5QIdLuskpZCAW3jcj7jTciVNh4Ds0Dmeeod0dQl3rCRM778YHBUppYrjlDEmpRGu3YMcNHfRehOknCvrh0Y1AauSi06uH9HQE94gmSJJZAauGuM0xSWVeoZCNxQJPDjoqR9oqkQLR6jF1HsRrLZCSrtkLdQ6KV6NEnOt2j9QZDZD"
+                        "key": "adStorageConsent",
+                        "value": "optional"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventNameStandard",
+                        "value": "ViewContent"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "generateFbp",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideCookieDomain",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userDataList",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "em"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - em}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "ph"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - ph}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "fn"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - fn}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "ln"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - ln}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "client_user_agent"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - User Agent}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "fbp"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - fbp}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "fbc"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - fbc}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "accessToken",
+                        "value": "{{Api acces token}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useAppSecretProof",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "inheritEventName",
+                        "value": "override"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "actionSource",
+                        "value": "website"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "pixelId",
+                        "value": "{{Pixel id}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHttpOnlyCookie",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "itemIdKey"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "overridenCookieDomain",
+                        "value": "laserman.com.ar"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useOptimisticScenario",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "bigQueryLogType",
+                        "value": "no"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "standard"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "serverEventDataList",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "event_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - Event ID}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableMultipixelSetup",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEventEnhancement",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1770473348355",
+                "fingerprint": "1770494000011",
                 "firingTriggerId": [
-                    "84"
+                    "86"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6336855581",
+                "containerId": "242224097",
+                "tagId": "88",
+                "name": "Meta CAPI - Lead DK",
+                "type": "cvt_5TP8W",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "logType",
+                        "value": "debug"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "adStorageConsent",
+                        "value": "optional"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventNameStandard",
+                        "value": "Lead"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "generateFbp",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideCookieDomain",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userDataList",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "em"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - em}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "ph"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - ph}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "fn"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - fn}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "ln"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - ln}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "client_user_agent"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - User Agent}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "fbp"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - fbp}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "fbc"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - fbc}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "accessToken",
+                        "value": "{{Api acces token}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useAppSecretProof",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "inheritEventName",
+                        "value": "override"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "actionSource",
+                        "value": "website"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "pixelId",
+                        "value": "{{Pixel id}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHttpOnlyCookie",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "itemIdKey"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "overridenCookieDomain",
+                        "value": "laserman.com.ar"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useOptimisticScenario",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "bigQueryLogType",
+                        "value": "no"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "standard"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "serverEventDataList",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "event_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{ED - Event ID}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableMultipixelSetup",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEventEnhancement",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1770494000012",
+                "firingTriggerId": [
+                    "78"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -1327,81 +1779,6 @@
                     }
                 ],
                 "fingerprint": "1770438272661"
-            },
-            {
-                "accountId": "6336855581",
-                "containerId": "242224097",
-                "triggerId": "69",
-                "name": "CE - ViewContent",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "view_content"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1770457562098"
-            },
-            {
-                "accountId": "6336855581",
-                "containerId": "242224097",
-                "triggerId": "71",
-                "name": "Click - WhatsApp",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "view_content"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1770459415782"
-            },
-            {
-                "accountId": "6336855581",
-                "containerId": "242224097",
-                "triggerId": "73",
-                "name": "CE - Purchase",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "purchase"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1770460573810"
             },
             {
                 "accountId": "6336855581",
@@ -1506,8 +1883,8 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224097",
-                "triggerId": "82",
-                "name": "CE - Contact",
+                "triggerId": "86",
+                "name": "CE - ViewContent Show",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1521,37 +1898,12 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "contact"
+                                "value": "view_content_show"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1770467751898"
-            },
-            {
-                "accountId": "6336855581",
-                "containerId": "242224097",
-                "triggerId": "84",
-                "name": "FB_CONVERSIONS_API-25699472449663830-Server-Trigger",
-                "type": "ALWAYS",
-                "filter": [
-                    {
-                        "type": "MATCH_REGEX",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Event Name}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": ".+"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1770473343380"
+                "fingerprint": "1770494000010"
             }
         ],
         "variable": [
@@ -1744,7 +2096,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "value",
-                        "value": "caiate.laserman.com.ar"
+                        "value": "marremix.laserman.com.ar"
                     }
                 ],
                 "fingerprint": "1770259320784",
