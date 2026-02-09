@@ -310,9 +310,9 @@
                         "value": "true"
                     },
                     {
-                        "type": "TEMPLATE",
+                        "type": "BOOLEAN",
                         "key": "overrideCookieDomain",
-                        "value": "{{Página general}}"
+                        "value": "true"
                     },
                     {
                         "type": "LIST",
@@ -453,7 +453,7 @@
                     {
                         "type": "BOOLEAN",
                         "key": "useHttpOnlyCookie",
-                        "value": "false"
+                        "value": "true"
                     },
                     {
                         "type": "TEMPLATE",
@@ -462,7 +462,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "overridenCookieDomain",
-                        "value": "{{Página general}}"
+                        "value": "laserman.com.ar"
                     },
                     {
                         "type": "BOOLEAN",
