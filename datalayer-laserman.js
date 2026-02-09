@@ -1,150 +1,252 @@
 // ============================================================
-// DATA LAYER PARA LASERMAN.COM.AR
-// Este codigo va en WPCode como snippet de Header
+// DATA LAYER COMPLETO PARA LASERMAN.COM.AR
+// Va en WPCode como snippet JavaScript en el HEADER
+// Prioridad: ALTA (debe cargar ANTES que GTM)
+//
+// Basado en documentacion oficial de Stape:
+// - https://stape.io/blog/end-to-end-guide-on-data-layer-in-google-tag-manager
+// - https://stape.io/blog/how-to-set-up-facebook-event-deduplication-in-google-tag-manager
 // ============================================================
 
-// 1. GENERAR EVENT_ID UNICO (fundamental para deduplicacion)
-// Sin esto, Meta no puede deduplicar Browser vs Server = eventos dobles
-function generateEventId() {
-    return Date.now().toString(36) + '.' + Math.random().toString(36).substr(2, 9);
+// INICIALIZAR DATA LAYER (debe ir antes del script de GTM)
+window.dataLayer = window.dataLayer || [];
+
+// -----------------------------------------------------------
+// FUNCION: Generar Event ID unico para deduplicacion
+// Meta necesita el MISMO event_id en Pixel (browser) y CAPI (server)
+// Sin esto, la deduplicacion da 0%
+// Formato recomendado por Stape: timestamp.random
+// -----------------------------------------------------------
+function stapeGenerateEventId() {
+    return Date.now().toString(36) + '.' + Math.random().toString(36).substring(2, 11);
 }
 
-// 2. OBTENER COOKIES DE FACEBOOK (fbp y fbc)
-function getFbp() {
-    var match = document.cookie.match(/(^|;)\s*_fbp=([^;]+)/);
-    return match ? match[2] : '';
+// -----------------------------------------------------------
+// FUNCION: Leer cookie por nombre
+// -----------------------------------------------------------
+function stapeGetCookie(name) {
+    var match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]+)'));
+    return match ? decodeURIComponent(match[2]) : '';
 }
 
-function getFbc() {
-    var match = document.cookie.match(/(^|;)\s*_fbc=([^;]+)/);
-    if (match) return match[2];
-    // Si no hay cookie _fbc, intentar construirla desde fbclid en la URL
-    var params = new URLSearchParams(window.location.search);
-    var fbclid = params.get('fbclid');
-    if (fbclid) {
-        return 'fb.1.' + Date.now() + '.' + fbclid;
-    }
+// -----------------------------------------------------------
+// FUNCION: Obtener fbclid desde la URL (para construir _fbc)
+// -----------------------------------------------------------
+function stapeGetFbc() {
+    var fbc = stapeGetCookie('_fbc');
+    if (fbc) return fbc;
+    try {
+        var params = new URLSearchParams(window.location.search);
+        var fbclid = params.get('fbclid');
+        if (fbclid) {
+            return 'fb.1.' + Date.now() + '.' + fbclid;
+        }
+    } catch(e) {}
     return '';
 }
 
-// 3. INICIALIZAR DATA LAYER
-window.dataLayer = window.dataLayer || [];
-
-// 4. PUSH INICIAL EN CADA PAGINA (antes de que GTM cargue)
-// Esto alimenta las variables DL - Event ID, DL - fbp, DL - fbc, etc.
+// -----------------------------------------------------------
+// PUSH INICIAL: datos base para TODAS las paginas
+// Esto alimenta las variables de GTM:
+//   {{DL - Event ID}} → event_id
+//   {{DL - fbp}}      → _fbp cookie
+//   {{DL - fbc}}      → _fbc cookie
+//   {{JS - User Agent}} → user_agent
+// -----------------------------------------------------------
 (function() {
-    var pageEventId = generateEventId();
+    var pageEventId = stapeGenerateEventId();
+    var pagePath = window.location.pathname;
+    var fbp = stapeGetCookie('_fbp');
+    var fbc = stapeGetFbc();
 
+    // Push base con event_id para el PageView
     window.dataLayer.push({
         'event_id': pageEventId,
-        'fbp': getFbp(),
-        'fbc': getFbc(),
         'user_agent': navigator.userAgent,
-        'page_type': document.location.pathname === '/' ? 'home' : 'page',
-        'page_title': document.title
+        'page_location': window.location.href,
+        'page_path': pagePath,
+        'page_title': document.title,
+        'page_hostname': window.location.hostname,
+        'page_referrer': document.referrer,
+        'fbp': fbp,
+        'fbc': fbc,
+        'currency': 'ARS'
     });
+
+    // -----------------------------------------------------------
+    // EVENTOS AUTOMATICOS BASADOS EN LA PAGINA
+    // Se disparan segun la URL que visita el usuario
+    // -----------------------------------------------------------
+
+    // HOME: ViewContent Home
+    if (pagePath === '/' || pagePath === '/index.html' || pagePath === '/index.php') {
+        window.dataLayer.push({
+            'event': 'view_content_home',
+            'event_id': stapeGenerateEventId(),
+            'content_name': 'Home_General',
+            'value': 300,
+            'currency': 'ARS'
+        });
+    }
+
+    // SHOW SECTION: ViewContent Show
+    if (pagePath.indexOf('show') !== -1 || pagePath.indexOf('/show') !== -1) {
+        window.dataLayer.push({
+            'event': 'view_content_show',
+            'event_id': stapeGenerateEventId(),
+            'content_name': 'Seccion_Show',
+            'value': 500,
+            'currency': 'ARS'
+        });
+    }
+
+    // DK: Lead DK
+    if (pagePath.indexOf('/dk/') !== -1 || pagePath.indexOf('/dk') !== -1) {
+        window.dataLayer.push({
+            'event': 'lead_dk',
+            'event_id': stapeGenerateEventId(),
+            'content_name': 'Presentacion_DK',
+            'value': 1200,
+            'currency': 'ARS'
+        });
+    }
+
+    // PRESUPUESTO: Purchase Presupuesto
+    if (pagePath.indexOf('presupuesto') !== -1) {
+        window.dataLayer.push({
+            'event': 'purchase_presupuesto',
+            'event_id': stapeGenerateEventId(),
+            'content_name': 'Presupuesto_2026',
+            'value': 2000,
+            'currency': 'ARS'
+        });
+    }
 })();
 
-// ============================================================
-// 5. FUNCIONES PARA DISPARAR EVENTOS CUSTOM
-// Cada evento genera su propio event_id unico
-// ============================================================
-
-// Clic en WhatsApp
-function trackWhatsApp() {
-    window.dataLayer.push({
-        'event': 'contact_whatsapp_click',
-        'event_id': generateEventId(),
-        'content_name': 'WhatsApp_Home',
-        'value': 1000,
-        'currency': 'ARS'
-    });
-}
-
-// Envio de formulario (se llama desde el form handler)
-function trackFormSubmit(userData) {
-    window.dataLayer.push({
-        'event': 'form_submit',
-        'event_id': generateEventId(),
-        'em': userData.email || '',
-        'ph': userData.phone || '',
-        'fn': userData.firstName || '',
-        'ln': userData.lastName || '',
-        'content_name': 'Formulario_Web',
-        'value': 0,
-        'currency': 'ARS'
-    });
-}
-
-// ============================================================
-// 6. DETECTAR CLICS EN WHATSAPP AUTOMATICAMENTE
-// Busca links a wa.me y botones de WhatsApp
-// ============================================================
+// -----------------------------------------------------------
+// DETECCION DE CLICS (se activa cuando el DOM esta listo)
+// -----------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Detectar clics en links de WhatsApp (wa.me o api.whatsapp.com)
-    document.addEventListener('click', function(e) {
-        var target = e.target.closest('a');
-        if (target) {
-            var href = target.getAttribute('href') || '';
-            if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
-                trackWhatsApp();
-            }
-        }
-    });
-
-    // Detectar clic en widget flotante de WhatsApp (boton verde)
-    // Esto cubre widgets como WhatsApp Chat, Joinchat, etc.
+    // -------------------------------------------------------
+    // CLIC EN WHATSAPP
+    // Detecta: links a wa.me, api.whatsapp.com, y widgets flotantes
+    // -------------------------------------------------------
     document.addEventListener('click', function(e) {
         var el = e.target;
-        // Buscar en el elemento y sus padres
-        for (var i = 0; i < 5; i++) {
+
+        // Buscar en el elemento y hasta 7 niveles de padres
+        for (var i = 0; i < 7; i++) {
             if (!el) break;
+
+            var href = (el.getAttribute && el.getAttribute('href')) || '';
             var classes = (el.className || '').toString().toLowerCase();
             var id = (el.id || '').toLowerCase();
-            var href = (el.getAttribute('href') || '').toLowerCase();
+            var ariaLabel = (el.getAttribute && el.getAttribute('aria-label')) || '';
+
+            // Detectar por href (links directos)
+            if (href.indexOf('wa.me') !== -1 ||
+                href.indexOf('whatsapp.com') !== -1 ||
+                href.indexOf('api.whatsapp') !== -1) {
+                window.dataLayer.push({
+                    'event': 'contact_whatsapp',
+                    'event_id': stapeGenerateEventId(),
+                    'content_name': 'WhatsApp_Home',
+                    'value': 1000,
+                    'currency': 'ARS'
+                });
+                return;
+            }
+
+            // Detectar por clase o ID (widgets flotantes)
             if (classes.indexOf('whatsapp') !== -1 ||
                 id.indexOf('whatsapp') !== -1 ||
                 classes.indexOf('wa-chat') !== -1 ||
                 classes.indexOf('joinchat') !== -1 ||
-                href.indexOf('wa.me') !== -1 ||
-                href.indexOf('whatsapp') !== -1) {
-                trackWhatsApp();
+                classes.indexOf('wa_btn') !== -1 ||
+                classes.indexOf('wh-widget') !== -1 ||
+                ariaLabel.toLowerCase().indexOf('whatsapp') !== -1) {
+                window.dataLayer.push({
+                    'event': 'contact_whatsapp',
+                    'event_id': stapeGenerateEventId(),
+                    'content_name': 'WhatsApp_Home',
+                    'value': 1000,
+                    'currency': 'ARS'
+                });
+                return;
+            }
+
+            el = el.parentElement;
+        }
+    });
+
+    // -------------------------------------------------------
+    // CLICS EN LOS 3 BOTONES DE SEGMENTO
+    // Boliche / Cultura / Productor
+    // -------------------------------------------------------
+    document.addEventListener('click', function(e) {
+        var el = e.target;
+        for (var i = 0; i < 5; i++) {
+            if (!el) break;
+            var text = (el.textContent || '').toUpperCase().trim();
+
+            if (text.indexOf('BOLICHE') !== -1 || text.indexOf('DISCOTECA') !== -1) {
+                window.dataLayer.push({
+                    'event': 'segment_click',
+                    'event_id': stapeGenerateEventId(),
+                    'content_name': 'Segmento_Boliche',
+                    'segment_type': 'boliche',
+                    'value': 0,
+                    'currency': 'ARS'
+                });
+                return;
+            }
+            if (text.indexOf('CULTURA') !== -1 || text.indexOf('MUNICIPALIDAD') !== -1) {
+                window.dataLayer.push({
+                    'event': 'segment_click',
+                    'event_id': stapeGenerateEventId(),
+                    'content_name': 'Segmento_Cultura',
+                    'segment_type': 'cultura',
+                    'value': 0,
+                    'currency': 'ARS'
+                });
+                return;
+            }
+            if (text.indexOf('PRODUCTOR') !== -1 || text.indexOf('EMPRESA') !== -1) {
+                window.dataLayer.push({
+                    'event': 'segment_click',
+                    'event_id': stapeGenerateEventId(),
+                    'content_name': 'Segmento_Productor',
+                    'segment_type': 'productor',
+                    'value': 0,
+                    'currency': 'ARS'
+                });
                 return;
             }
             el = el.parentElement;
         }
     });
 
-    // Detectar clics en los 3 botones de segmento
-    document.addEventListener('click', function(e) {
-        var target = e.target.closest('a, button, [role="button"]');
-        if (!target) return;
-        var text = (target.textContent || '').trim();
+    // -------------------------------------------------------
+    // ENVIO DE FORMULARIO
+    // Captura datos del usuario para mejorar EMQ
+    // -------------------------------------------------------
+    document.addEventListener('submit', function(e) {
+        var form = e.target;
+        var emailField = form.querySelector('input[type="email"], input[name*="email"], input[name*="correo"]');
+        var phoneField = form.querySelector('input[type="tel"], input[name*="phone"], input[name*="tel"], input[name*="celular"]');
+        var nameField = form.querySelector('input[name*="name"], input[name*="nombre"]');
 
-        if (text.indexOf('BOLICHE') !== -1 || text.indexOf('DISCOTECA') !== -1) {
-            window.dataLayer.push({
-                'event': 'segment_click',
-                'event_id': generateEventId(),
-                'content_name': 'Segmento_Boliche',
-                'segment_type': 'boliche'
-            });
-        }
-        if (text.indexOf('CULTURA') !== -1 || text.indexOf('MUNICIPALIDAD') !== -1) {
-            window.dataLayer.push({
-                'event': 'segment_click',
-                'event_id': generateEventId(),
-                'content_name': 'Segmento_Cultura',
-                'segment_type': 'cultura'
-            });
-        }
-        if (text.indexOf('PRODUCTOR') !== -1 || text.indexOf('EMPRESA') !== -1) {
-            window.dataLayer.push({
-                'event': 'segment_click',
-                'event_id': generateEventId(),
-                'content_name': 'Segmento_Productor',
-                'segment_type': 'productor'
-            });
-        }
+        window.dataLayer.push({
+            'event': 'form_submit',
+            'event_id': stapeGenerateEventId(),
+            'em': emailField ? emailField.value : '',
+            'ph': phoneField ? phoneField.value : '',
+            'fn': nameField ? nameField.value.split(' ')[0] : '',
+            'ln': nameField && nameField.value.split(' ').length > 1 ? nameField.value.split(' ').slice(1).join(' ') : '',
+            'content_name': 'Formulario_Web',
+            'value': 0,
+            'currency': 'ARS'
+        });
     });
 });
