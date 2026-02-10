@@ -378,6 +378,69 @@
         ],
         "formatValue": {},
         "fingerprint": "1770700000018"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "518",
+        "name": "ED - segment_type",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "segment_type"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000035"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "519",
+        "name": "ED - video_percent",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "video_percent"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000036"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "520",
+        "name": "ED - video_id",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "video_id"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000037"
       }
     ],
     "trigger": [
@@ -555,6 +618,106 @@
           }
         ],
         "fingerprint": "1770700000025"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "607",
+        "name": "CE - segment_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "segment_click"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000038"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "608",
+        "name": "CE - section_view",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "section_view"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000039"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "609",
+        "name": "CE - video_play",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "video_play"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000040"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "610",
+        "name": "CE - video_progress",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "video_progress"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000041"
       }
     ],
     "tag": [
@@ -2243,6 +2406,1124 @@
         "fingerprint": "1770700000032",
         "firingTriggerId": [
           "606"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "707",
+        "name": "Meta CAPI - Segment Click",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "custom"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameCustom",
+            "value": "SegmentClick"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_ip_address"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - IP Address}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "segment_type"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - segment_type}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000042",
+        "firingTriggerId": [
+          "607"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "708",
+        "name": "Meta CAPI - Section View",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "standard"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameStandard",
+            "value": "ViewContent"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "content_name"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - content_name}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "value"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - value}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "currency"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - currency}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000043",
+        "firingTriggerId": [
+          "608"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "709",
+        "name": "Meta CAPI - Video Play",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "standard"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameStandard",
+            "value": "ViewContent"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "content_name"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - content_name}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "video_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - video_id}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000044",
+        "firingTriggerId": [
+          "609"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "710",
+        "name": "Meta CAPI - Video Complete",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "custom"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameCustom",
+            "value": "VideoComplete"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "video_percent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - video_percent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "video_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - video_id}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "content_name"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - content_name}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000045",
+        "firingTriggerId": [
+          "610"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "monitoringMetadata": {
