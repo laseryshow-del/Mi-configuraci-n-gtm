@@ -1,0 +1,2356 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-02-10 00:00:00",
+  "containerVersion": {
+    "path": "accounts/6336855581/containers/242224097/versions/100",
+    "accountId": "6336855581",
+    "containerId": "242224097",
+    "containerVersionId": "100",
+    "name": "Configuracion Server Completa v2",
+    "container": {
+      "path": "accounts/6336855581/containers/242224097",
+      "accountId": "6336855581",
+      "containerId": "242224097",
+      "name": "Configuracion Server Completa v2",
+      "publicId": "GTM-T2ZQP7WV",
+      "usageContext": [
+        "SERVER"
+      ],
+      "fingerprint": "1770700000000",
+      "taggingServerUrls": [
+        "https://marremix.laserman.com.ar"
+      ],
+      "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6336855581/containers/242224097/workspaces?apiLink=container"
+    },
+    "builtInVariable": [
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "type": "EVENT_NAME",
+        "name": "Event Name"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "500",
+        "name": "CONST - FB API Access Token",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "EAA0D5fYG7HQBQqsWw1zzodmrIVTCg2F2hhm6D85QfU9WdnOacBBOrFvOAbPAm3vYLHCJ3hVNsQyQ8xKCZCyAIpgJ77E78mk6DKdAnpYDRraSWdocE6ZC5ZBJ4l9F80lZAKvJ9eGqOWWSe3RCqVmPDWMLbZAo66an0n909mBsjlDbW41l5nmZCZAEP6RADyESZBzmTgZDZD"
+          }
+        ],
+        "fingerprint": "1770700000001"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "501",
+        "name": "CONST - Facebook Pixel ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "25699472449663830"
+          }
+        ],
+        "fingerprint": "1770700000002"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "502",
+        "name": "CONST - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "G-J4JTN4JRE0"
+          }
+        ],
+        "fingerprint": "1770700000003"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "503",
+        "name": "CONST - Cookie Domain",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "laserman.com.ar"
+          }
+        ],
+        "fingerprint": "1770700000004"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "504",
+        "name": "CONST - Stape Server URL",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "https://marremix.laserman.com.ar"
+          }
+        ],
+        "fingerprint": "1770700000005"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "505",
+        "name": "ED - event_id",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "event_id"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000006"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "506",
+        "name": "ED - em",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "em"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000007"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "507",
+        "name": "ED - ph",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "ph"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000008"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "508",
+        "name": "ED - fn",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "fn"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000009"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "509",
+        "name": "ED - ln",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "ln"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000010"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "510",
+        "name": "ED - fbp",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "_fbp"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000011"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "511",
+        "name": "ED - fbc",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "_fbc"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000012"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "512",
+        "name": "ED - User Agent",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "client_user_agent"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000013"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "513",
+        "name": "ED - IP Address",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "ip_override"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000014"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "514",
+        "name": "ED - page_location",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "page_location"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000015"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "515",
+        "name": "ED - content_name",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "content_name"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000016"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "516",
+        "name": "ED - value",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "value"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000017"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "variableId": "517",
+        "name": "ED - currency",
+        "type": "ed",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "keyPath",
+            "value": "currency"
+          }
+        ],
+        "formatValue": {},
+        "fingerprint": "1770700000018"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "600",
+        "name": "CE - page_view",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "page_view"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000019"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "601",
+        "name": "CE - view_content_home",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "view_content_home"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000020"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "602",
+        "name": "CE - view_content_show",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "view_content_show"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000021"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "603",
+        "name": "CE - purchase_presupuesto",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "purchase_presupuesto"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000022"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "604",
+        "name": "CE - generate_lead",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "generate_lead"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000023"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "605",
+        "name": "CE - lead_dk",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "lead_dk"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000024"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "triggerId": "606",
+        "name": "CE - contact_whatsapp",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "contact_whatsapp"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000025"
+      }
+    ],
+    "tag": [
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "700",
+        "name": "Meta CAPI - PageView",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "standard"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameStandard",
+            "value": "PageView"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000026",
+        "firingTriggerId": [
+          "600"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "701",
+        "name": "Meta CAPI - ViewContent Home",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "standard"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameStandard",
+            "value": "ViewContent"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000027",
+        "firingTriggerId": [
+          "601"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "702",
+        "name": "Meta CAPI - ViewContent Show",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "standard"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameStandard",
+            "value": "ViewContent"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000028",
+        "firingTriggerId": [
+          "602"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "703",
+        "name": "Meta CAPI - Purchase",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "standard"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameStandard",
+            "value": "Purchase"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000029",
+        "firingTriggerId": [
+          "603"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "704",
+        "name": "Meta CAPI - Lead",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "standard"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameStandard",
+            "value": "Lead"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000030",
+        "firingTriggerId": [
+          "604"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "705",
+        "name": "Meta CAPI - Lead DK",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "standard"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameStandard",
+            "value": "Lead"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000031",
+        "firingTriggerId": [
+          "605"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "tagId": "706",
+        "name": "Meta CAPI - Contact",
+        "type": "cvt_5TP8W",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "logType",
+            "value": "debug"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "adStorageConsent",
+            "value": "optional"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateFbp",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "overrideCookieDomain",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "accessToken",
+            "value": "{{CONST - FB API Access Token}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useAppSecretProof",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "inheritEventName",
+            "value": "override"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "actionSource",
+            "value": "website"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "pixelId",
+            "value": "{{CONST - Facebook Pixel ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useHttpOnlyCookie",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "itemIdKey",
+            "value": ""
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "overridenCookieDomain",
+            "value": "{{CONST - Cookie Domain}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "useOptimisticScenario",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "bigQueryLogType",
+            "value": "no"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "standard"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableMultipixelSetup",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEventEnhancement",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventNameStandard",
+            "value": "Contact"
+          },
+          {
+            "type": "LIST",
+            "key": "userDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "em"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - em}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ph"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ph}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fn"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fn}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "ln"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - ln}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "client_user_agent"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - User Agent}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbp"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbp}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "fbc"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - fbc}}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "serverEventDataList",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "event_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{ED - event_id}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1770700000032",
+        "firingTriggerId": [
+          "606"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      }
+    ],
+    "client": [
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "clientId": "800",
+        "name": "GA4 Client",
+        "type": "gaaw_client",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "cookieDomain",
+            "value": "auto"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "cookieMaxAgeInSec",
+            "value": "63072000"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "activateDefaultPaths",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "cookiePath",
+            "value": "/"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "migrateFromJsClientId",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "cookieManagement",
+            "value": "server"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "cookieName",
+            "value": "FPID"
+          }
+        ],
+        "fingerprint": "1770700000033"
+      },
+      {
+        "accountId": "6336855581",
+        "containerId": "242224097",
+        "clientId": "801",
+        "name": "Stape Data Client",
+        "type": "cvt_242224097_100",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "responseStatusCode",
+            "value": "200"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "generateClientId",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "responseBody",
+            "value": "timestamp"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "prolongCookies",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "httpOnlyCookie",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "responseBodyGet",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "acceptMultipleEvents",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "exposeFPIDCookie",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1770700000034"
+      }
+    ],
+    "fingerprint": "1770700000000",
+    "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6336855581/containers/242224097/versions/100?apiLink=version"
+  }
+}
