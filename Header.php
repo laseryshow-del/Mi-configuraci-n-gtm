@@ -275,6 +275,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <nav class="hidden md:flex items-center gap-8">
             <a href="#servicios" class="text-[10px] text-white/40 hover:text-neon transition-colors uppercase tracking-[0.3em]">Servicios</a>
             <a href="#galeria" class="text-[10px] text-white/40 hover:text-neon transition-colors uppercase tracking-[0.3em]">Videos</a>
+            <a href="#embudo" class="text-[10px] text-white/40 hover:text-neon transition-colors uppercase tracking-[0.3em]">Como Funciona</a>
             <a href="#clientes" class="text-[10px] text-white/40 hover:text-neon transition-colors uppercase tracking-[0.3em]">Trayectoria</a>
             <a href="#contacto" class="px-6 py-2 bg-neon text-black text-[9px] font-black uppercase tracking-widest hover:scale-105 transition-transform">
                 Cotizar
@@ -297,8 +298,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
     <a href="#servicios" onclick="toggleMobileMenu()" class="text-2xl font-display font-bold text-white hover:text-neon transition-colors">Servicios</a>
     <a href="#galeria" onclick="toggleMobileMenu()" class="text-2xl font-display font-bold text-white hover:text-neon transition-colors">Videos</a>
+    <a href="#embudo" onclick="toggleMobileMenu()" class="text-2xl font-display font-bold text-white hover:text-neon transition-colors">Como Funciona</a>
     <a href="#clientes" onclick="toggleMobileMenu()" class="text-2xl font-display font-bold text-white hover:text-neon transition-colors">Trayectoria</a>
-    <a href="#testimonios" onclick="toggleMobileMenu()" class="text-2xl font-display font-bold text-white hover:text-neon transition-colors">Testimonios</a>
     <a href="#contacto" onclick="toggleMobileMenu()" class="px-8 py-3 bg-neon text-black font-bold uppercase tracking-wide hover:bg-white transition-colors">Cotizar Ahora</a>
 </div>
 
